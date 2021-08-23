@@ -41,10 +41,10 @@
 
 % ========== Opções do documento ==========
 % Título
-\titulo{Título}
+\titulo{Robô Hospitalar}
 
 % Autor
-\autor{Nome Sobrenome}
+\autor{Vanderson da Silva dos Santos}
 
 % Para múltiplos autores (TCC)
 %\autor{Nome Sobrenome\\%
@@ -52,25 +52,25 @@
 %		Nome Sobrenome}
 
 % Orientador / Coorientador
-\orientador{Nome do orientador}
-\coorientador{Nome do coorientador (opcional)}
+\orientador{Leopoldo Rideki Yoshioka}
+%\coorientador{Nome do coorientador (opcional)}
 
 % Tipo de documento
-%\tcc{Eletricista com ênfase em Sistemas Eletrônicos}
-\dissertacao{Engenharia Elétrica}
+\tcc{}
+%\dissertacao{Engenharia Elétrica}
 %\teseDOC{Engenharia Elétrica}
 %\teseLD
 %\memorialLD
 
 % Departamento e área de concentração
-\departamento{Nome do departamento}
-\areaConcentracao{Área de concentração}
+\departamento{Engenharia de Sistemas Eletrônicos}
+\areaConcentracao{Engenharia de Sistemas Eletrônicos}
 
 % Local
 \local{São Paulo}
 
 % Ano
-\data{2013}
+\data{2021}
 
 
 
@@ -96,7 +96,7 @@
 
 
 % ========== Dedicatória (opcional) ==========
-\dedicatoria{Dedicatória}
+\dedicatoria{Dedico esse trabalho aos amigos da Thunderatz e do Robô Hospitalar}
 
 
 % ========== Agradecimentos ==========
@@ -109,9 +109,9 @@ Thanks...
 
 % ========== Epígrafe (opcional) ==========
 \epigrafe{%
-	\emph{``Epígrafe''}
+	\emph{``Mas nunca imaginaria que a curiosidade fosse outra dessas tantas ciladas do amor''}
 	\begin{flushright}
-		-{}- Autor
+		-{}- Gabriel Garcia Marquez
 	\end{flushright}
 }
 
@@ -143,14 +143,56 @@ Abstract...
 % ========== Sumário ==========
 \sumario
 
-
-
 % ========== Elementos textuais ==========
 
+% ========== Parte 1: Introdução ==========
 \part{Introdução}
-	
-\chapter{Capítulo com epígrafe}
-\capepigrafe[0.5\textwidth]{``Frase espirituosa de um autor famoso''}{Autor famoso}
+\chapter{Primeiro Robô Hospitalar}
+\section{Apresentação}
+\section{Problemas}
+\chapter{Segundo Robô Hospitalar}
+\section{Apresentação}
+\section{Sistema Elétrico e Computacional}
+
+% ========== Parte 2: Hardware ==========
+\part{Hardware}
+\chapter{Sistema Embarcado Completo}
+\section{Apresentação}
+\section{Alimentação}
+\section{Comunicação}
+
+\chapter{Placas de Circuito Impresso}
+\section{Controle}
+\subsection{Protótipo}
+\subsection{Oficial}
+\section{Percepção Externa}
+\subsection{Protótipo}
+\subsection{Oficial}
+\section{Iluminação}
+\subsection{Protótipo}
+\subsection{Oficial}
+\section{Telemetria}
+\subsection{Protótipo}
+\subsection{Oficial}
+\section{Interface com Usuário}
+\subsection{Protótipo}
+\subsection{Oficial}
+
+% ========== Parte 3: Software ==========
+\part{Software}
+\chapter{Sistema Computacional Completo}
+\section{Apresentação}
+
+\chapter{Ambiente de Simulação}
+\section{Gazebo}
+\section{Modelo do Robô}
+\subsection{Carenagem}
+\subsection{Sensores}
+\section{Modelo do mundo}
+\chapter{Algoritmos de Controle}
+\section{ROS}
+\subsection{Integração com Gazebo}
+\section{Comunicação com Embarcados}
 
 \blindtext
 
@@ -161,8 +203,9 @@ Abstract...
 \blindtext
 
 
-
-\blinddocument
+% ========== TITULOS DO SUMÁRIOS ==========
+%\blinddocument
+% =========================================
 
 
 % ========== Referências ==========

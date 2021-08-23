@@ -1118,11 +1118,11 @@
 
 %% TCC
 \newcommand{\tcc}[1]{%
-  \renewcommand{\PoliTipoDocData}{Trabalho de Conclusão de Curso}
+  \renewcommand{\PoliTipoDocData}{Trabalho de Conclusão de Iniciação Científica}
   \comentario{Trabalho apresentado à Escola
     Politécnica da Universidade de
-    São Paulo para obtenção do
-    Título de Engenheiro #1.}%
+    São Paulo para conclusão de Iniciação
+    Científica #1.}%
 }
 
 %% Dissertação de mestrado
