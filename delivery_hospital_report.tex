@@ -1,43 +1,20 @@
 \documentclass[]{politex}
-% ========== Opções ==========
-% pnumromarab - Numeração de páginas usando algarismos romanos na parte pré-textual e arábicos na parte textual
-% abnttoc - Forçar paginação no sumário conforme ABNT (inclui "p." na frente das páginas)
-% normalnum - Numeração contínua de figuras e tabelas 
-%	(caso contrário, a numeração é reiniciada a cada capítulo)
-% draftprint - Ajusta as margens para impressão de rascunhos
-%	(reduz a margem interna)
-% twosideprint - Ajusta as margens para impressão frente e verso
-% capsec - Forçar letras maiúsculas no título das seções
-% espacosimples - Documento usando espaçamento simples
-% espacoduplo - Documento usando espaçamento duplo
-%	(o padrão é usar espaçamento 1.5)
-% times - Tenta usar a fonte Times New Roman para o corpo do texto
-% noindentfirst - Não indenta o primeiro parágrafo dos capítulos/seções
-
 
 % ========== Packages ==========
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amsfonts,amssymb}
 \usepackage{graphicx,cite,enumerate}
-
+\usepackage{subfiles}
 
 % ========== Language options ==========
 \usepackage[brazil]{babel}
-%\usepackage[english]{babel}
-
 
 % ========== ABNT (requer ABNTeX 2) ==========
 %	http://www.ctan.org/tex-archive/macros/latex/contrib/abntex2
-%\usepackage[num]{abntex2cite}
-
-% Forçar o abntex2 a usar [ ] nas referências ao invés de ( )
-%\citebrackets{[}{]}
-
+\usepackage[num]{abntex2cite}
 
 % ========== Lorem ipsum ==========
 \usepackage{blindtext}
-
-
 
 % ========== Opções do documento ==========
 % Título
@@ -45,11 +22,6 @@
 
 % Autor
 \autor{Vanderson da Silva dos Santos}
-
-% Para múltiplos autores (TCC)
-%\autor{Nome Sobrenome\\%
-%		Nome Sobrenome\\%
-%		Nome Sobrenome}
 
 % Orientador / Coorientador
 \orientador{Leopoldo Rideki Yoshioka}
@@ -72,15 +44,11 @@
 % Ano
 \data{2021}
 
-
-
-
 \begin{document}
 % ========== Capa e folhas de rosto ==========
 \capa
 \falsafolhaderosto
 \folhaderosto
-
 
 % ========== Folha de assinaturas (opcional) ==========
 %\begin{folhadeaprovacao}
@@ -89,15 +57,12 @@
 %	\assinatura{Prof.\ Z}
 %\end{folhadeaprovacao}
 
-
 % ========== Ficha catalográfica ==========
 % Fazer solicitação no site:
 %	http://www.poli.usp.br/en/bibliotecas/servicos/catalogacao-na-publicacao.html
 
-
 % ========== Dedicatória (opcional) ==========
 \dedicatoria{Dedico esse trabalho aos amigos da Thunderatz e do Robô Hospitalar}
-
 
 % ========== Agradecimentos ==========
 \begin{agradecimentos}
@@ -106,7 +71,6 @@ Thanks...
 
 \end{agradecimentos}
 
-
 % ========== Epígrafe (opcional) ==========
 \epigrafe{%
 	\emph{``Mas nunca imaginaria que a curiosidade fosse outra dessas tantas ciladas do amor''}
@@ -114,7 +78,6 @@ Thanks...
 		-{}- Gabriel Garcia Marquez
 	\end{flushright}
 }
-
 
 % ========== Resumo ==========
 \begin{resumo}
@@ -125,7 +88,6 @@ Resumo...
 \textbf{Palavras-Chave} -- Palavra, Palavra, Palavra, Palavra, Palavra.
 \end{resumo}
 
-
 % ========== Abstract ==========
 \begin{abstract}
 Abstract...
@@ -134,7 +96,6 @@ Abstract...
 %
 \textbf{Keywords} -- Word, Word, Word, Word, Word.
 \end{abstract}
-
 
 % ========== Listas (opcional) ==========
 \listadefiguras
@@ -147,52 +108,30 @@ Abstract...
 
 % ========== Parte 1: Introdução ==========
 \part{Introdução}
-\chapter{Primeiro Robô Hospitalar}
-\section{Apresentação}
-\section{Problemas}
-\chapter{Segundo Robô Hospitalar}
-\section{Apresentação}
-\section{Sistema Elétrico e Computacional}
+\subfile{chapters/introducao}
+
+\subfile{chapters/objetivo}
+
+\subfile{chapters/motivacao}
+
+\subfile{chapters/metodologia}
+
+\subfile{chapters/arquitetura_do_projeto}
 
 % ========== Parte 2: Hardware ==========
 \part{Hardware}
-\chapter{Sistema Embarcado Completo}
-\section{Apresentação}
-\section{Alimentação}
-\section{Comunicação}
+\subfile{chapters/sistema_embarcado_completo}
 
-\chapter{Placas de Circuito Impresso}
-\section{Controle}
-\subsection{Protótipo}
-\subsection{Oficial}
-\section{Percepção Externa}
-\subsection{Protótipo}
-\subsection{Oficial}
-\section{Iluminação}
-\subsection{Protótipo}
-\subsection{Oficial}
-\section{Telemetria}
-\subsection{Protótipo}
-\subsection{Oficial}
-\section{Interface com Usuário}
-\subsection{Protótipo}
-\subsection{Oficial}
+\subfile{chapters/placas_de_circuito_impresso}
 
 % ========== Parte 3: Software ==========
 \part{Software}
-\chapter{Sistema Computacional Completo}
-\section{Apresentação}
 
-\chapter{Ambiente de Simulação}
-\section{Gazebo}
-\section{Modelo do Robô}
-\subsection{Carenagem}
-\subsection{Sensores}
-\section{Modelo do mundo}
-\chapter{Algoritmos de Controle}
-\section{ROS}
-\subsection{Integração com Gazebo}
-\section{Comunicação com Embarcados}
+\subfile{chapters/sistema_computacional_completo}
+
+\subfile{chapters/ambiente_de_simulacao}
+
+\subfile{chapters/algoritmos_de_controle}
 
 \blindtext
 
@@ -202,11 +141,9 @@ Abstract...
 
 \blindtext
 
-
 % ========== TITULOS DO SUMÁRIOS ==========
 %\blinddocument
 % =========================================
-
 
 % ========== Referências ==========
 % --- IEEE ---
@@ -215,22 +152,17 @@ Abstract...
 
 % --- ABNT (requer ABNTeX 2) ---
 %	http://www.ctan.org/tex-archive/macros/latex/contrib/abntex2
-%\bibliographystyle{abntex2-num}
-
-%\bibliography{}
-
+\bibliographystyle{abntex2-num}
+\bibliography{bibliography}
 
 % ========== Apêndices (opcional) ==========
 \apendice
 \chapter{}
 \chapter{Beta}
 
-
 % ========== Anexos (opcional) ==========
 \anexo
 \chapter{Alpha}
 \chapter{}
-
-
 
 \end{document}
