@@ -6,6 +6,8 @@
 \usepackage{graphicx,cite,enumerate}
 \usepackage{subfiles}
 \usepackage{caption}
+\usepackage{pdfpages}
+\usepackage{adjustbox}
 
 % ========== Language options ==========
 \usepackage[brazil]{babel}
@@ -19,7 +21,7 @@
 
 % ========== Opções do documento ==========
 % Título
-\titulo{Robô Hospitalar}
+\titulo{Robô Hospitalar: Hardware e Software}
 
 % Autor
 \autor{Vanderson da Silva dos Santos}
@@ -53,14 +55,13 @@
 
 % ========== Folha de assinaturas (opcional) ==========
 %\begin{folhadeaprovacao}
-%	\assinatura{Prof.\ X}
+	%\assinatura{Prof. Dr. Leopoldo Rideki Yoshioka}
 %	\assinatura{Prof.\ Y}
 %	\assinatura{Prof.\ Z}
 %\end{folhadeaprovacao}
 
 % ========== Ficha catalográfica ==========
-% Fazer solicitação no site:
-%	http://www.poli.usp.br/en/bibliotecas/servicos/catalogacao-na-publicacao.html
+\includepdf{ficha_catalografica.pdf}
 
 % ========== Dedicatória (opcional) ==========
 \dedicatoria{Dedico esse trabalho aos amigos da Thunderatz e do Robô Hospitalar}
@@ -76,7 +77,7 @@ Thanks...
 \epigrafe{%
 	\emph{``Mas nunca imaginaria que a curiosidade fosse outra dessas tantas ciladas do amor''}
 	\begin{flushright}
-		-{}- Gabriel Garcia Marquez
+		- Gabriel Garcia Marquez
 	\end{flushright}
 }
 
@@ -121,10 +122,10 @@ Abstract...
 
 % ========== Parte 2: Hardware ==========
 \part{Hardware}
-\subfile{chapters/sistema_embarcado_completo}
 
-\subfile{chapters/placas_de_circuito_impresso}
+\subfile{chapters/modulos_embarcados}
 
+\subfile{chapters/distribuicao_de_energia}
 % ========== Parte 3: Software ==========
 \part{Software}
 
