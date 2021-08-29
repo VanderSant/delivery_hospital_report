@@ -1,15 +1,22 @@
 \documentclass[../delivery_hospital_report.tex]{subfiles}
 \graphicspath{ {images/}{../images/}{../../images/} }
 \begin{document}
+\clearpage
 
 \section{Sinalização}
+
+A placa de Sinalização é a mais importante esteticamente para o robô. Ela foi idealizada, desde da primeira versão do robô hospitalar, para realizar a iluminação e comunicação por luz (como faróis). De maneira geral ele controla uma série de leds rgbs endereçáveis e strobos automotivos. Além de, claro, como já mencionado antes, enviar e receber informações da placa de controle principal.
+
 \subsection{Placa}
+
+Como módulo, existem muitas minúcias que precisamos tomar ao projetá-las. A placa de Sinalização, para segunda versão do robô hospitalar, com objetivo de evitar problemas e realizar testes, teve duas versões: um protótipo, que já foi finalizado, e uma versão oficial, ainda em desenvolvimento. 
+
 %================================ SINALIZAÇÂO PROTÒTIPO========================
 \subsubsection{Protótipo}
 
-\paragraph{Esquemático}
+O protótipo da placa de Sinalização foi refeito uma única vez. Como se trata de uma placa fresada, pode ser refeita no próprio laboratório do professor orientador. O projeto da placa eletrônica, assim como o de todos os módulos, foi dividido em esquemático e Printed Circuit board (PCB)  ou placa de circuito impresso.
 
-\begin{figure}[h]
+\begin{figure}[!h]
 \centering
     \caption{Protótipo placa de Sinalização - Esquemático principal }
     \centering % para centralizarmos a figura
@@ -18,7 +25,9 @@
     \label{Protótipo placa de ## - Esquemático principal}
 \end{figure}
 
-\begin{table}[]
+Para design do hardware do módulo de Sinalização foi utilizado o CAD e software Altium Designer 21 \cite{altium21} a partir de uma licença estudantil. O projeto completo está disponibilizado em \cite{github_modulos} e todos os componentes usado nesse protótipo podem ser visto na tabela ~\ref{table:Componentes Utilizados na placa de Sinalização - Protótipo}.
+
+\begin{table}[!h]
 \caption{Componentes Utilizados na placa de Sinalização - Protótipo}
 \centering
 \begin{adjustbox}{width=\columnwidth,center}
@@ -42,8 +51,20 @@ microcontrolador            & microcontrolador com   moculo bluethoth e wifi    
 \end{adjustbox}
 \centering
 \caption*{Fonte: Elaborado pelo autor}
-\label{table:voc}
+\label{table:Componentes Utilizados na placa de Sinalização - Protótipo}
 \end{table}
+
+Dentre os componentes usados, destaca-se os conversores de nível lógico bidirecional, sendo que cada conversor é um módulo com 8 transistores BSS138 \cite{BSS138_datasheet} . Além disso, como já mencionado antes, também usamos o ESP32 \cite{esp32} como microcontrolador do módulo.
+
+%------------------------------------------
+\begin{wrapfigure}{r}{5.5cm}
+\caption{ Sensor de distância vl53l0x}\label{wrap-fig:1}
+\includegraphics[width=4cm]{modulos/led_rgb_end.png}
+\caption*{Fonte: Foto disponibilizada por botnroll}\label{wrap-fig:1}
+\end{wrapfigure} 
+%------------------------------------------
+
+Para a iluminação do robô, foram escolhidos os leds rgb endereçável ws2812b \cite{WS2812B_datasheet}, que, com um conjunto de três fitas com 80 leds em casa, iluminam o robô por completo. Além disso, para enviar sinais mais de sinalização, foram usados 4 strobos automotivos Ajk 4 \cite{strobos_datasheet}.
 
 
 \paragraph{Printed Circuit board (PCB)}
@@ -64,9 +85,12 @@ microcontrolador            & microcontrolador com   moculo bluethoth e wifi    
     \end{minipage}\hfill
     
     \caption*{Fonte: Elaborado pelo autor no software Altium Design\cite{altium21} }
-    \label{fig:figurasminipg}
+    \label{fig:Protótipo Sinalização - PCB 2D3D}
 \end{figure}
 
+A partir do esquema elétrico que foi feito e do desenho da PCB, a placa de circuito impresso, em uma única camada (Single Layer) e dimensões de 120x60mm. As visões 2D e 3D podem ser vista na figura -\ref{fig:Protótipo Sinalização - PCB 2D3D} e as placas fresada reais na figura ~\ref{fig:Protótipo Sinalização - TrilhasC}
+
+\begin{comment}
 \begin{figure}[!ht]
     \centering
     \begin{minipage}{0.5\textwidth}
@@ -83,15 +107,17 @@ microcontrolador            & microcontrolador com   moculo bluethoth e wifi    
     \end{minipage}\hfill
     
     \caption*{Fonte: Elaborado pelo autor }
-    \label{fig:figurasminipg}
+    \label{fig:Protótipo Sinalização - TrilhasC}
 \end{figure}
+\end{comment}
 
 %================================ SINALIZAÇÂO OfICIAL ========================
+\clearpage
 \subsubsection{Oficial}
 
-\paragraph{Esquemático}
+A placa oficial de Sinalização ainda não foi fabricada. Por se tratar de uma placa mais profissional, ela será mandada para ser feita para uma empresa privada ainda não escolhida, não na própria Universidade São Paulo. Assim como o protótipo, o projeto como um todo foi dividido em um esquemático e uma PCB.
 
-\begin{figure}[h]
+\begin{figure}[!h]
 \centering
     \caption{placa de Sinalização - Esquemático principal }
     \centering % para centralizarmos a figura
@@ -100,7 +126,9 @@ microcontrolador            & microcontrolador com   moculo bluethoth e wifi    
     \label{Protótipo placa de ## - Esquemático principal}
 \end{figure}
 
-\begin{table}[]
+Para design do hardware do módulo de Sinalização foi utilizado o CAD e software Altium Designer 21 \cite{altium21} a partir de uma licença estudantil. O projeto completo está disponibilizado em \cite{github_modulos} e todos os componentes usado nessa versão oficial podem ser visto na tabela ~\ref{table:Componentes Utilizados na placa de Sinalização}
+
+\begin{table}[!ht]
 \caption{Componentes Utilizados na placa de Sinalização}
 \centering
 \begin{adjustbox}{width=\columnwidth,center}
@@ -127,12 +155,12 @@ Conversor de nível logico & U2                                           & Conv
 \end{adjustbox}
 \centering
 \caption*{Fonte: Elaborado pelo autor}
-\label{table:voc}
+\label{table:Componentes Utilizados na placa de Sinalização}
 \end{table}
 
-\paragraph{Printed Circuit board (PCB)}
+Em relação ao protótipo, pouco mudou da lógica por trás do circuito, a principal diferença é que o modelo oficial utiliza todos componentes com encapsulamento SMD \cite{SMD_def}. Além disso, foi adicionado o protocolo de comunicação SPI também, como já foi comentado no início do capítulo.
 
-\begin{figure}[!ht]
+\begin{figure}[!h]
     \centering
     \begin{minipage}{0.5\textwidth}
         \centering
@@ -143,15 +171,18 @@ Conversor de nível logico & U2                                           & Conv
     \begin{minipage}{0.5\textwidth}
         \centering
         \caption{Sinalização - PCB 3D }
-        \includegraphics[width=0.4\textwidth]{modulos/Sinalização_Official.png} 
+        \includegraphics[width=0.5\textwidth]{modulos/Sinalização_Official.png} 
         \label{fig:figura1minipg}
     \end{minipage}\hfill
     
     \caption*{Fonte: Elaborado pelo autor no software Altium Design\cite{altium21} }
-    \label{fig:figurasminipg}
+    \label{fig:Sinalização - PCB 2D3D}
 \end{figure}
 
+A placa de circuito impresso está completa, porém ainda não foi feito o pedido oficial de fabricação.
+
+\begin{comment}
 %================================ SINALIZAÇÂO FIRMWARE ========================
 \subsection{Firmware}
-
+\end{comment}
 \end{document}

@@ -1,26 +1,33 @@
 \documentclass[../delivery_hospital_report.tex]{subfiles}
 \graphicspath{ {images/}{../images/}{../../images/} }
 \begin{document}
-
+\clearpage
 
 \section{Interface com Usuário}
+
+A placa de Interface com o usuário é uma das que deram mais problemas. Ela foi idealizada, desde da primeira versão do robô hospitalar, para realizar a leitura de cartões, para retirada de entregas do robô hospitalar, abertura e controle do motor das quatro portas do robô hospitalar, além, é claro, de enviar informações para o módulo de controle.
+
 \subsection{Placa}
+
+Como módulo, existem muitas minúcias que precisamos tomar ao projetá-las. A placa de Interface com o usuário, para segunda versão do robô hospitalar, com objetivo de evitar problemas e realizar testes, teve duas versões: um protótipo, que já foi finalizado, e uma versão oficial, ainda em desenvolvimento. 
 
 %================================ INTERFACE COM USUARIO PROTÓTIPO ========================
 \subsubsection{Protótipo}
 
-\paragraph{Esquemático}
+O protótipo das placas foi refeito três vezes. Como se trata de uma placa fresada, pode ser refeita no próprio laboratório do professor orientador. A primeira placa não funcionou porque a impressão ficou ruim. O projeto da placa eletrônica, assim como o de todos os módulos, foi dividido em esquemático e Printed Circuit board (PCB) . 
 
-\begin{figure}[h]
+\begin{figure}[!ht]
 \centering
     \caption{Protótipo placa de Interface com Usuário - Esquemático principal }
     \centering % para centralizarmos a figura
-    \includegraphics[width=17cm]{modulos/InterfaceComUsuario-1.png}
+    \includegraphics[width=15cm]{modulos/InterfaceComUsuario-1.png}
     \caption*{Fonte: Elaborado pelo autor no software Altium Design\cite{altium21} }
     \label{Protótipo placa de ## - Esquemático principal}
 \end{figure}
 
-\begin{table}[]
+Para design do hardware do módulo de Interface com Usuário foi utilizado o CAD e software Altium Designer 21 \cite{altium21} a partir de uma licença estudantil. O projeto completo está disponibilizado em \cite{github_modulos} e todos os componentes usado nesse protótipo podem ser visto na ~\ref{table:Componentes Utilizados na placa de Interface com Usuário - Protótipo}
+
+\begin{table}[!ht]
 \caption{Componentes Utilizados na placa de Interface com Usuário - Protótipo}
 \centering
 \begin{adjustbox}{width=\columnwidth,center}
@@ -46,11 +53,12 @@ microcontrolador            & microcontrolador com   moculo bluethoth e wifi & U
 \end{adjustbox}
 \centering
 \caption*{Fonte: Elaborado pelo autor}
-\label{table:voc}
+\label{table:Componentes Utilizados na placa de Interface com Usuário - Protótipo}
 \end{table}
 
+Dentre os componentes usados, destaca-se o rele T73 \cite{rele_T73_datasheet} e o optoacoplador 4N25 \cite{4N25_datasheet} , utilizado nas solenoides da porta. Além disso, como já mencionado antes, também usamos o ESP32 \cite{esp32} como microcontrolador do módulo.
 
-\paragraph{Printed Circuit board (PCB)}
+A partir do esquema elétrico que foi feito e do desenho da PCB, a placa de circuito impresso, em uma única camada (Single Layer) e dimensões de 120x60mm. As visões 2D e 3D podem ser vista na figura -\ref{fig:Protótipo Interface com Usuário - PCB 2D3D} e as placas fresada reais na figura ~\ref{fig:Protótipo Interface com Usuário - TrilhasC}
 
 \begin{figure}[!ht]
     \centering
@@ -68,9 +76,10 @@ microcontrolador            & microcontrolador com   moculo bluethoth e wifi & U
     \end{minipage}\hfill
     
     \caption*{Fonte: Elaborado pelo autor no software Altium Design\cite{altium21} }
-    \label{fig:figurasminipg}
+    \label{fig:Protótipo Interface com Usuário - PCB 2D3D}
 \end{figure}
 
+\begin{comment}
 \begin{figure}[!ht]
     \centering
     \begin{minipage}{0.5\textwidth}
@@ -86,15 +95,16 @@ microcontrolador            & microcontrolador com   moculo bluethoth e wifi & U
         \label{fig:figura1minipg}
     \end{minipage}\hfill
     \caption*{Fonte: Elaborado pelo autor }
-    \label{fig:figurasminipg}
+    \label{fig:Protótipo Interface com Usuário - TrilhasC}
 \end{figure}
-
+\end{comment}
 %================================ INTERFACE COM USUARIO OFICIAL ========================
+\clearpage
 \subsubsection{Oficial}
 
-\paragraph{Esquemático}
+A placa oficial de Interface com o usuário ainda não foi fabricada. Por se tratar de uma placa mais profissional, ela será mandada para ser feita para uma empresa privada ainda não escolhida, não na própria Universidade São Paulo. Assim como o protótipo, o projeto como um todo foi dividido em um esquemático e uma PCB.
 
-\begin{figure}[h]
+\begin{figure}[!ht]
 \centering
     \caption{placa de Interface com Usuário - Esquemático principal }
     \centering % para centralizarmos a figura
@@ -103,7 +113,9 @@ microcontrolador            & microcontrolador com   moculo bluethoth e wifi & U
     \label{Protótipo placa de ## - Esquemático principal}
 \end{figure}
 
-\begin{table}[]
+Para design do hardware do módulo de Interface com o usuário foi utilizado o CAD e software Altium Designer 21 \cite{altium21} a partir de uma licença estudantil. O projeto completo está disponibilizado em \cite{github_modulos} e todos os componentes usado nessa versão oficial podem ser visto na tabela ~\ref{table:Componentes Utilizados na placa de Interface com Usuário}
+
+\begin{table}[!ht]
 \caption{Componentes Utilizados na placa de Interface com Usuário}
 \centering
 \begin{adjustbox}{width=\columnwidth,center}
@@ -134,10 +146,17 @@ microcontrolador & microcontrolador com   moculo bluethoth e wifi & U1          
 \end{adjustbox}
 \centering
 \caption*{Fonte: Elaborado pelo autor}
-\label{table:voc}
+\label{table:Componentes Utilizados na placa de Interface com Usuário}
 \end{table}
 
+Em relação ao protótipo, pouco mudou da lógica por trás do circuito, a principal diferença é que o modelo oficial utiliza todos componentes com encapsulamiento SMD \cite{SMD_def}. Além disso, foi adicionado o protocolo de comunicação SPI também, como já foi comentado no início do capítulo.
+
+
+A placa de circuito impresso ainda está em desenvolvimento.
+
+\begin{comment}
 %================================ INTERFACE COM USUARIO FIRMWARE ========================
 \subsection{Firmware}
+\end{comment}
 
 \end{document}
