@@ -25,7 +25,7 @@ O protótipo das placas foi refeito três vezes. Como se trata de uma placa fres
     \label{Protótipo placa de ## - Esquemático principal}
 \end{figure}
 
-Para design do hardware do módulo de controle foi utilizado o CAD e software Altium Designer 21 \cite{altium21} a partir de uma licença estudantil. O projeto completo está disponibilizado em \cite{github_modulos} e todos os componentes usado nesse protótipo podem ser visto na tabela ~\ref{table:Componentes placa de Controle - Protótipo}
+Para design do hardware do módulo de controle foi utilizado o CAD e software Altium Designer 21 \cite{altium21} a partir de uma licença estudantil. O projeto completo está disponibilizado em \cite{github_modulos} e todos os componentes usado nesse protótipo podem ser visto na tabela ~\ref{table:Componentes placa de Controle - Protótipo}.
 
 \begin{table}[!h]
 \caption{Componentes Utilizados na placa de Controle - Protótipo}
@@ -103,14 +103,14 @@ A placa oficial de controle ainda não foi fabricada. Por se tratar de uma placa
 
 \begin{figure}[h]
 \centering
-    \caption{placa de Controle - Esquemático principal }
+    \caption{Placa de Controle - Esquemático principal }
     \centering % para centralizarmos a figura
     \includegraphics[width=15cm]{modulos/controle_motor_official-1.png}
     \caption*{Fonte: Elaborado pelo autor no software Altium Design\cite{altium21} }
-    \label{Protótipo placa de ## - Esquemático principal}
+    \label{Placa de Controle - Esquemático principal}
 \end{figure}
 
-Para design do hardware do módulo de controle foi utilizado o CAD e software Altium Designer 21 \cite{altium21} a partir de uma licença estudantil. O projeto completo está disponibilizado em \cite{github_modulos} e todos os componentes usado nessa versão oficial podem ser visto na ~\ref{table:Componentes Utilizados na placa de Controle}
+Para design do hardware do módulo de controle foi utilizado o CAD e software Altium Designer 21 \cite{altium21} a partir de uma licença estudantil. O projeto completo está disponibilizado em \cite{github_modulos} e todos os componentes usado nessa versão oficial podem ser visto na tabela ~\ref{Componentes Utilizados na placa de Controle}.
 
 \begin{table}[h]
 \caption{Componentes Utilizados na placa de Controle}
@@ -152,5 +152,20 @@ A placa de circuito impresso ainda está em desenvolvimento.
 \begin{comment}
 \subsection{Firmware}
 \end{comment}
+
+\subsection{Driver do Motor}
+
+O motor do robô hospitalar é trifásico. A construção de uma ESC para controle adequado e preciso do motor é um trabalho muito minucioso e preciso. Por conta disso, como decisão de projeto, os integrantes do grupo preferiram comprar um driver que a conseguisse realizar o controle de segurança. A imagem do driver pode ser vista na figura ~\ref{fig:Driver de Controle do Motor}.
+
+\begin{figure}[h]
+\centering
+    \caption{Driver de Controle do Motor}
+    \centering % para centralizarmos a figura
+    \includegraphics[width=15cm]{driver_motor.png}
+    \caption*{Fonte: imagem retirada de \cite{drivermotor21}}
+    \label{fig:Driver de Controle do Motor}
+\end{figure}
+
+Entretanto, ainda há necessidade de controlar adequadamente esse driver, o qual é a função da placa de controle.
 
 \end{document}

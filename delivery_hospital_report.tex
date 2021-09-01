@@ -10,6 +10,7 @@
 \usepackage{adjustbox}
 \usepackage{wrapfig,lipsum}
 \usepackage{verbatim}
+\usepackage{listings}
 
 % ========== Language options ==========
 \usepackage[brazil]{babel}
@@ -71,7 +72,14 @@
 % ========== Agradecimentos ==========
 \begin{agradecimentos}
 
-Thanks...
+Primeiramente, à minha família, que me deram suporte para ir e vir periodicamente na USP em um momento que transporte público não era aconselhado.
+
+Ao meu professor orientador, Leopoldo Yoshioka, pela a oportunidade de participar do grupo , fazer a manutenção do projeto e sempre dar suporte, tanto em ajuda, quanto em ensinamentos .
+
+Aos amigos do Robô Hospitalar, principalmente ao Lucas Boccia e Thomas Furukawa, que assume e vem assumindo uma postura administrativa, respectivamente, na equipe e ao Bruno Camara e o Pedro Croso, pelas noites de projetos e suporte. 
+
+Aos amigos da equipe de robótica Thunderatz, que além de me presentear com uma base teórica e prática incrível, ainda estão sempre disponíveis para me dar suporte.
+
 
 \end{agradecimentos}
 
@@ -85,12 +93,14 @@ Thanks...
 
 % ========== Resumo ==========
 \begin{resumo}
-Resumo...
+Toda a indústria de automação mundial, vem crescendo todo anos e como consequência contribuindo para um mundo mais eficiente. No âmbito da saúde, para corroborar para um atendimento ao paciente e garantir que os profissionais da realizem menos trabalhos repetitivos, diversos equipamentos vêm sendo desenvolvidos, dentre eles, robôs hospitalares. O objetivo deste trabalho é ,a partir desses princípios, a produção de um robô hospitalar que visa transportar medicamentos por todo um andar de um hospital. No âmbito do hardware,a proposta é fazer uma série de módulos eletrônicos embarcados que visam controlar e fazer manutenção do robô e reguladores de tensão, que garantam energia estável para os equipamentos eletrônicos. Por fim, no ponto de vista do Software, é desenvolver os algoritmos de controle com auxílio do framework ROS, realizar a simulação desses dados por Gazebo e Rviz e por fim, garantir todo o transporte dos dados pelo robô de maneira segura e confiável.
 %
 \\[3\baselineskip]
 %
-\textbf{Palavras-Chave} -- Palavra, Palavra, Palavra, Palavra, Palavra.
+\textbf{Palavras-Chave} -- Autonomação, Algoritmos de Controle, ROS, Programação de Embarcados, Robótica.
 \end{resumo}
+
+\begin{comment}
 
 % ========== Abstract ==========
 \begin{abstract}
@@ -100,7 +110,7 @@ Abstract...
 %
 \textbf{Keywords} -- Word, Word, Word, Word, Word.
 \end{abstract}
-
+\end{comment}
 % ========== Listas (opcional) ==========
 \listadefiguras
 \listadetabelas
@@ -125,25 +135,34 @@ Abstract...
 % ========== Parte 2: Hardware ==========
 \part{Hardware}
 
+\subfile{chapters/distribuicao_de_energia}
+
 \subfile{chapters/modulos_embarcados}
 
-\subfile{chapters/distribuicao_de_energia}
 % ========== Parte 3: Software ==========
 \part{Software}
-
-\subfile{chapters/sistema_computacional_completo}
 
 \subfile{chapters/ambiente_de_simulacao}
 
 \subfile{chapters/algoritmos_de_controle}
 
-\blindtext
+\subfile{chapters/integracao_software_hardware}
 
-\begin{citacaoLonga}
-	\blindtext
-\end{citacaoLonga}
+\begin{comment} % se sobrar tempo comentar
 
-\blindtext
+
+\subfile{chapters/desenvolvimento_web_mobile}
+\end{comment}
+
+% ========== Parte 4: Software ==========
+\part{Resultados}
+
+No âmbito da computação e da eletrônica, o software e hardware, que andam muito próximos um do outro, os resultados foram satisfatórios, mas nada além disso. Foi bastante trabalho em pouco tempo, porém, não foram realizados tantos testes quanto foi idealizado por conta de períodos sem poder frequentar a USP.
+
+No que diz respeito ao Hardware, os módulos oficiais ainda não foram fabricados, pois é necessário revisar melhor os esquemáticos e testar todos os protótipos por completo para mandar fazer. Porém, levando em consideração que quase toda a reestruturação do projeto tem pouco menos de 8 meses, e poucos mais de 10 placas de circuito impresso foram sintetizadas, ainda é um bom resultado.
+
+No que diz respeito ao Software, em pouco menos de 6 meses, todo o ambiente de simulação e algoritmos de controle foram produzidos. Por mais que o código da primeira versão fosse funcional, muito pouco era reaproveitável pela falta de organização e documentação de tudo desenvolvido. Por conta disso, tudo foi refeito. Contudo, tiveram-se muitos resultados produzidos e garantia de um código que pode ser repassado para futuras gerações de membros do projeto.
+
 
 % ========== TITULOS DO SUMÁRIOS ==========
 %\blinddocument
@@ -157,12 +176,11 @@ Abstract...
 
 % ========== Apêndices (opcional) ==========
 \apendice
-\chapter{}
-\chapter{Beta}
+\subfile{chapters/visao_computacional}
 
 % ========== Anexos (opcional) ==========
 \anexo
-\chapter{Alpha}
-\chapter{}
+\subfile{chapters/anexos}
+
 
 \end{document}

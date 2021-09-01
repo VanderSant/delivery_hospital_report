@@ -42,8 +42,8 @@ LED 5MM RED                 & LED 5MM RED                                    & D
 BC549                       & TRANS NPN 30V 0.1A   TO-92                     & Q1                       & TO92                        & 1        \\ \hline
 RES 470R 1/4W   CARBON FILM & RES 470R OHM 1/4W 5\%   CARBON FILM            & R1, R2, R3, R8           & RES 470R 1/4W CARBON   FILM & 4        \\ \hline
 4.7K                        & RES 4.7K OHM 1/4W 5\%   CARBON FILM            & R4, R7                   & RES 4.7K 1/4W CARBON   FILM & 2        \\ \hline
-1M6                         &                                                & R5                       & RESISTOR 0603               & 1        \\ \hline
-140K                        &                                                & R6                       & RESISTOR 0805               & 1        \\ \hline
+1M6                         & RES 1.6M OHM                                   & R5                       & RESISTOR 0603               & 1        \\ \hline
+140K                        & RES 140k OHM                                   & R6                       & RESISTOR 0805               & 1        \\ \hline
 microcontrolador            & microcontrolador com   moculo bluethoth e wifi & U1                       & ESP32\_Desvikit\_v1         & 1        \\ \hline
 
 \end{tabular}
@@ -57,6 +57,7 @@ Dentre os componentes usados, nenhum muito diferente foi utilizado. Para mensura
 
 %------------------------------------------
 \begin{wrapfigure}{r}{5.5cm}
+\centering
 \caption{ Sensor de temperatura e umidade dht 22}\label{wrap-fig:1}
 \includegraphics[width=4cm]{modulos/dht22_sensor.jpg}
 \caption*{Fonte: Foto disponibilizada por botnroll}\label{wrap-fig:1}
@@ -71,20 +72,20 @@ Para medir a temperatura e umidade dentro do robô foi usado o sensor DHT22 \cit
         \centering
         \caption{Protótipo Telemetria - PCB 2D}
         \includegraphics[width=1.03\textwidth]{modulos/Telemetria-2.png} 
-        \label{fig:figura1minipg}
+        \label{Protótipo Telemetria - PCB 2D}
     \end{minipage}\hfill
     \begin{minipage}{0.5\textwidth}
         \centering
         \caption{Protótipo Telemetria - PCB 3D }
         \includegraphics[width=0.4\textwidth]{modulos/Telemetria.png} 
-        \label{fig:figura1minipg}
+        \label{Protótipo Telemetria - PCB 3D}
     \end{minipage}\hfill
     
     \caption*{Fonte: Elaborado pelo autor no software Altium Design\cite{altium21} }
     \label{fig:Protótipo Telemetria - PCB 2D3D}
 \end{figure}
 
-A partir do esquema elétrico que foi feito e do desenho da PCB, a placa de circuito impresso, em uma única camada (Single Layer) e dimensões de 120x60mm. As visões 2D e 3D podem ser vista na figura -\ref{fig:Protótipo Telemetria - PCB 2D3D} e as placas fresada reais na figura ~\ref{fig:Protótipo Telemetria - TrilhasC}
+A partir do esquema elétrico que foi feito e do desenho da PCB, a placa de circuito impresso, em uma única camada (Single Layer) e dimensões de 120x60mm. As visões 2D e 3D podem ser vista na figura ~\ref{Protótipo Telemetria - PCB 2D} e ~\ref{Protótipo Telemetria - PCB 3D}.
 
 \begin{comment}
 \begin{figure}[!h]
@@ -122,7 +123,7 @@ A placa oficial de Telemetria ainda não foi fabricada. Por se tratar de uma pla
     \label{Protótipo placa de ## - Esquemático principal}
 \end{figure}
 
-Para design do hardware do módulo de Telemetria foi utilizado o CAD e software Altium Designer 21 \cite{altium21} a partir de uma licença estudantil. O projeto completo está disponibilizado em \cite{github_modulos} e todos os componentes usado nessa versão oficial podem ser visto na tabela ~\ref{table:Componentes Utilizados na placa de Telemetria}
+Para design do hardware do módulo de Telemetria foi utilizado o CAD e software Altium Designer 21 \cite{altium21} a partir de uma licença estudantil. O projeto completo está disponibilizado em \cite{github_modulos} e todos os componentes usado nessa versão oficial podem ser visto na tabela ~\ref{table:Componentes Utilizados na placa de Telemetria}.
 
 \begin{table}[!h]
 \caption{Componentes Utilizados na placa de Telemetria}
@@ -151,7 +152,7 @@ microcontrolador & microcontrolador com   moculo bluethoth e wifi & U1          
 \end{adjustbox}
 \centering
 \caption*{Fonte: Elaborado pelo autor}
-\label{table:voc}
+\label{table:Componentes Utilizados na placa de Telemetria}
 \end{table}
 
 Em relação ao protótipo, pouco mudou da lógica por trás do circuito, a principal diferença é que o modelo oficial utiliza todos componentes com encapsulamento SMD \cite{SMD_def}. Além disso, foi adicionado o protocolo de comunicação SPI também, como já foi comentado no início do capítulo.

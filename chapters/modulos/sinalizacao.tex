@@ -58,6 +58,7 @@ Dentre os componentes usados, destaca-se os conversores de nível lógico bidire
 
 %------------------------------------------
 \begin{wrapfigure}{r}{5.5cm}
+\centering
 \caption{ Sensor de distância vl53l0x}\label{wrap-fig:1}
 \includegraphics[width=4cm]{modulos/led_rgb_end.png}
 \caption*{Fonte: Foto disponibilizada por botnroll}\label{wrap-fig:1}
@@ -67,28 +68,26 @@ Dentre os componentes usados, destaca-se os conversores de nível lógico bidire
 Para a iluminação do robô, foram escolhidos os leds rgb endereçável ws2812b \cite{WS2812B_datasheet}, que, com um conjunto de três fitas com 80 leds em casa, iluminam o robô por completo. Além disso, para enviar sinais mais de sinalização, foram usados 4 strobos automotivos Ajk 4 \cite{strobos_datasheet}.
 
 
-\paragraph{Printed Circuit board (PCB)}
-
 \begin{figure}[!ht]
     \centering
     \begin{minipage}{0.5\textwidth}
         \centering
         \caption{Protótipo Sinalização - PCB 2D}
         \includegraphics[width=1.03\textwidth]{modulos/Sinalização-2.png} 
-        \label{fig:figura1minipg}
+        \label{Protótipo Sinalização - PCB 2D}
     \end{minipage}\hfill
     \begin{minipage}{0.5\textwidth}
         \centering
         \caption{Protótipo Sinalização - PCB 3D }
         \includegraphics[width=0.4\textwidth]{modulos/Sinalização.png} 
-        \label{fig:figura1minipg}
+        \label{Protótipo Sinalização - PCB 3D}
     \end{minipage}\hfill
     
     \caption*{Fonte: Elaborado pelo autor no software Altium Design\cite{altium21} }
     \label{fig:Protótipo Sinalização - PCB 2D3D}
 \end{figure}
 
-A partir do esquema elétrico que foi feito e do desenho da PCB, a placa de circuito impresso, em uma única camada (Single Layer) e dimensões de 120x60mm. As visões 2D e 3D podem ser vista na figura -\ref{fig:Protótipo Sinalização - PCB 2D3D} e as placas fresada reais na figura ~\ref{fig:Protótipo Sinalização - TrilhasC}
+A partir do esquema elétrico que foi feito e do desenho da PCB, a placa de circuito impresso, em uma única camada (Single Layer) e dimensões de 120x60mm. As visões 2D e 3D podem ser vista na figura ~\ref{Protótipo Sinalização - PCB 2D} e ~\ref{Protótipo Sinalização - PCB 3D}.
 
 \begin{comment}
 \begin{figure}[!ht]
@@ -126,7 +125,7 @@ A placa oficial de Sinalização ainda não foi fabricada. Por se tratar de uma 
     \label{Protótipo placa de ## - Esquemático principal}
 \end{figure}
 
-Para design do hardware do módulo de Sinalização foi utilizado o CAD e software Altium Designer 21 \cite{altium21} a partir de uma licença estudantil. O projeto completo está disponibilizado em \cite{github_modulos} e todos os componentes usado nessa versão oficial podem ser visto na tabela ~\ref{table:Componentes Utilizados na placa de Sinalização}
+Para design do hardware do módulo de Sinalização foi utilizado o CAD e software Altium Designer 21 \cite{altium21} a partir de uma licença estudantil. O projeto completo está disponibilizado em \cite{github_modulos} e todos os componentes usado nessa versão oficial podem ser visto na tabela ~\ref{table:Componentes Utilizados na placa de Sinalização}.
 
 \begin{table}[!ht]
 \caption{Componentes Utilizados na placa de Sinalização}
