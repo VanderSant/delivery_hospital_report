@@ -1,0 +1,7 @@
+version: "3.7"
+
+services:
+  delivery_hospital:
+    container_name: delivery_hospital_report
+    build: .
+    restart: unless-stopped
